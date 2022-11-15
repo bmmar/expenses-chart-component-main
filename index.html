@@ -1,43 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Expenses chart component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <link rel="stylesheet" href="app.css" />
 
-  My balance
-  $921.48
-
-  Spending - Last 7 days
-
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
-
-  Total this month
-  $478.33
-
-  +2.4%
-  from last month
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <title>Expenses chart component</title>
+  </head>
+  <body>
+    <main>
+      <!-- Top section -->
+      <div class="top-card">
+        <div class="text-and-amount">
+          <span class="text"> My balance</span>
+          <span class="amount"> $921.48</span>
+        </div>
+        <img src="./images/logo.svg" alt="Logo" />
+      </div>
+      <!-- Main section -->
+      <div class="main-card">
+        <h1>Spending - Last 7 days</h1>
+        <canvas id="spending-graph">Bar Chart of spending by day</canvas>
+        <legend for="spending-graph" class="days-of-week">
+          <ul>
+            <li>mon</li>
+            <li>tue</li>
+            <li>wed</li>
+            <li>thu</li>
+            <li>fri</li>
+            <li>sat</li>
+            <li>sun</li>
+          </ul>
+        </legend>
+        <hr />
+        <div class="bottom-analysis">
+          <span class="total-and-amount">
+            <span class="total-this-month">Total this month</span>
+            <span class="total">$478.33</span>
+          </span>
+          <span class="change-and-text">
+            <span class="change-percent">+2.4%</span>
+            <span class="change-text">from last month</span></span
+          >
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Brian Marshall</a>.
+      </div>
+    </footer>
+    <script type="text/javascript" src="data.json"></script>
+    <script src="expenses.js"></script>
+  </body>
 </html>

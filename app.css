@@ -1,0 +1,146 @@
+html {
+  background-color: white;
+  margin: 0 auto;
+}
+
+body {
+  max-width: 340px;
+  font-family: "DM Sans", sans-serif;
+  background-color: hsl(27, 66%, 92%);
+  margin: 5% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  font-size: 18px;
+}
+
+.top-card {
+  background-color: hsl(10, 79%, 65%);
+  margin: 20% 5% 5%;
+  border-radius: 0.75rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.text-and-amount {
+  display: flex;
+  flex-direction: column;
+}
+
+div .text {
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+div img {
+  max-width: 3.5rem;
+}
+
+.main-card {
+  background-color: hsl(33, 100%, 98%);
+  margin: 0 5% 15%;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  color: hsl(25, 47%, 15%);
+}
+
+.main-card #spending-graph {
+  width: 100%;
+}
+
+legend {
+  padding: 0;
+}
+
+
+ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px 0 2px;
+  /* display: flex; */
+  /* text-align: justify; */
+  margin-left: 0;
+  margin: 0;
+}
+
+ul li {
+  padding:0;
+}
+
+/* li:nth-child(2) {
+  margin-left: -2%;
+}
+
+li:nth-child(4) {
+  margin-left: -3%;
+} */
+
+/* li:nth-child(6) {
+  margin-left: 5%;
+} */
+
+.main-card .days-of-week {
+  font-size: 0.7rem;
+  color: hsl(28, 10%, 53%);
+  margin-bottom: 1.7rem;
+  display: flex;
+}
+
+.main-card .bottom-analysis {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.main-card .total-and-amount {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-card .change-and-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 1.2rem;
+}
+
+.main-card .change-and-text,
+.main-card .total-this-month {
+  font-size: 0.9rem;
+}
+.main-card .total-this-month {
+  color: hsl(28, 10%, 53%);
+}
+
+.main-card .change-percent {
+  font-weight: 700;
+}
+
+.main-card .total {
+  font-weight: 700;
+  color: hsl(25, 47%, 15%);
+  font-size: 1.8rem;
+}
+
+.main-card .change-text {
+  color: hsl(28, 10%, 53%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  background-color: white;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
