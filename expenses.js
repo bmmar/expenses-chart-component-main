@@ -72,9 +72,11 @@ canvas.height = canvas.width * 0.5;
 const scaleUpFactor = 2.5;
 
 let xStartingPoint = 0;
-let yStartingPoint = 150;
+const yStartingPoint = 150;
+const width = 32;
 let highestAmount = 0;
 highestAmount = findHighest();
+let coords = [];
 
 for (let i = 0; i < 7; i++) {
   ctx.fillStyle = "hsl(10, 79%, 65%)";
@@ -88,7 +90,9 @@ for (let i = 0; i < 7; i++) {
   console.log("Highest Amount is: " + highestAmount);
   ctx.beginPath();
 
-  ctx.roundRect(xStartingPoint, yStartingPoint, 32, height, 2);
+  ctx.roundRect(xStartingPoint, yStartingPoint, width, height, 2);
+  let coord = {'x': xStartingPoint, 'y':yStartingPoint, 'width': width, 'height': height}
+  coords.push(coord);
 
   ctx.stroke();
   ctx.fill();
@@ -96,12 +100,32 @@ for (let i = 0; i < 7; i++) {
   ctx.closePath();
 }
 
+
+
+
+
+// canvas.addEventListener('click', function (event) {
+//   if (ctx.isPointInPath(event.offsetX, event.offsetY)) {
+//     console.log("Event!!");
+//   }
+// })
+
+// console.log(coords);
+// canvas.addEventListener("mousemove", (e) => {
+//   let target = coords.findIndex(
+//     (bar) => e.offsetX >= bar.x && e.offsetX <= bar.x + width 
+//   );
+//   // console.log(target);
+//   console.log(e.offsetX + ' : ' + coords[0].x + parseInt(width));
+//   console.log(e.x - e.offsetX)
+// });
+
 function findHighest() {
-    highestAmount = 0;
-    for (let i = 0; i < 7; i++) { 
-        if (data[i].amount > highestAmount) { 
-            highestAmount = data[i].amount;
-        }
+  highestAmount = 0;
+  for (let i = 0; i < 7; i++) {
+    if (data[i].amount > highestAmount) {
+      highestAmount = data[i].amount;
     }
-    return highestAmount;
+  }
+  return highestAmount;
 }
