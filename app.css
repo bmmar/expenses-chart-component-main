@@ -55,6 +55,63 @@ h1 {
 
 .main-card #spending-graph {
   width: 100%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(7, 10.3%);
+  grid-template-rows: repeat(100, .15rem);
+  column-gap: 4%;
+}
+
+span {
+  text-align: center;
+  grid-row: 100;  
+}
+
+.data {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#spending-graph li {
+  background-color: hsl(10, 79%, 65%);
+  color: rgba(0, 0, 0, 0%);
+  border-radius: 4px;
+}
+
+.monday {  
+  grid-row: 80/ span 20;
+}
+
+.tuesday {
+  background-color: aquamarine;
+  grid-row: 45 / span 55;
+}
+.wednesday {
+  background-color: aquamarine;
+  /* grid-row: 45 / span 55; */
+  grid-column: 3;
+}
+
+#mon {
+  grid-column: 1;
+}
+#tue {
+  grid-column: 2;
+}
+#wed {
+  grid-column: 3;
+}
+#thu {
+  grid-column: 4;
+}
+#fri {
+  grid-column: 5;
+}
+#sat {
+  grid-column: 6
+}
+#sun {
+  grid-column: 7;
 }
 
 legend {

@@ -35,18 +35,26 @@
       <!-- Main section -->
       <div class="main-card">
         <h1>Spending - Last 7 days</h1>
-        <canvas id="spending-graph">Bar Chart of spending by day</canvas>
-        <legend for="spending-graph" class="days-of-week">
-          <ul>
-            <li>mon</li>
-            <li>tue</li>
-            <li>wed</li>
-            <li>thu</li>
-            <li>fri</li>
-            <li>sat</li>
-            <li>sun</li>
-          </ul>
-        </legend>
+        <ul class="graph-container" id="spending-graph">
+          <li class="monday">mon</li>
+          <li class="tuesday">tue</li>
+          <li class="wednesday">wed</li>
+          <li class="thursday">thu</li>
+          <li class="friday">fri</li>
+          <li class="saturday">sat</li>
+          <li class="sunday">sun</li>
+        </ul>
+
+        <!-- <ul>    
+            <span id="mon">mon</span>
+            <span id="tue">tue</span>
+            <span id="wed">wed</span>
+            <span id="thu">thu</span>
+            <span id="fri">fri</span>
+            <span id="sat">sat</span>
+            <span id="sun">sun</span>
+          </ul> -->
+
         <hr />
         <div class="bottom-analysis">
           <span class="total-and-amount">

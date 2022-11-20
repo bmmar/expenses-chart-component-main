@@ -1,5 +1,11 @@
-const canvas = document.getElementById("spending-graph");
-const ctx = canvas.getContext("2d");
+const graph = document.getElementById("spending-graph");
+const mon = document.querySelector(".monday");
+const tue = document.querySelector(".tuesday");
+const wed = document.querySelector(".wednesday");
+const thu = document.querySelector(".thursday");
+const fri = document.querySelector(".friday");
+const sat = document.querySelector(".saturday");
+const sun = document.querySelector(".sunday");
 
 const data1 = [
   {
@@ -63,69 +69,14 @@ const data2 = [
   },
 ];
 
-let data = data1;
+let data = data2;
 
-let height = -50;
+let startRow = 0;
 
-canvas.height = canvas.width * 0.5;
-
-const scaleUpFactor = 2.5;
-
-let xStartingPoint = 0;
-const yStartingPoint = 150;
-const width = 32;
-let highestAmount = 0;
-highestAmount = findHighest();
-let coords = [];
-
-for (let i = 0; i < 7; i++) {
-  ctx.fillStyle = "hsl(10, 79%, 65%)";
-  ctx.strokeStyle = "hsl(10, 79%, 65%)";
-  let height = data[i].amount * -1 * scaleUpFactor;
-  if (data[i].amount === highestAmount) {
-    ctx.fillStyle = "hsl(186, 34%, 60%)";
-    ctx.strokeStyle = "hsl(186, 34%, 60%)";
-    highestAmount = data[i].amount;
-  }
-  console.log("Highest Amount is: " + highestAmount);
-  ctx.beginPath();
-
-  ctx.roundRect(xStartingPoint, yStartingPoint, width, height, 2);
-  let coord = {'x': xStartingPoint, 'y':yStartingPoint, 'width': width, 'height': height}
-  coords.push(coord);
-
-  ctx.stroke();
-  ctx.fill();
-  xStartingPoint += 45;
-  ctx.closePath();
+for (i = 0; i < 7; i++) {
+  startRow = 100 - Math.round(data[i].amount);
+  let day = eval(data[i].day);
+  day.style.gridRow = `${startRow}/ span ${Math.round(data[i].amount)}`;
 }
 
 
-
-
-
-// canvas.addEventListener('click', function (event) {
-//   if (ctx.isPointInPath(event.offsetX, event.offsetY)) {
-//     console.log("Event!!");
-//   }
-// })
-
-// console.log(coords);
-// canvas.addEventListener("mousemove", (e) => {
-//   let target = coords.findIndex(
-//     (bar) => e.offsetX >= bar.x && e.offsetX <= bar.x + width 
-//   );
-//   // console.log(target);
-//   console.log(e.offsetX + ' : ' + coords[0].x + parseInt(width));
-//   console.log(e.x - e.offsetX)
-// });
-
-function findHighest() {
-  highestAmount = 0;
-  for (let i = 0; i < 7; i++) {
-    if (data[i].amount > highestAmount) {
-      highestAmount = data[i].amount;
-    }
-  }
-  return highestAmount;
-}
