@@ -55,15 +55,14 @@ h1 {
 
 .main-card #spending-graph {
   width: 100%;
-  height: 80%;
+  height: 57%;
   display: grid;
   grid-template-columns: repeat(7, 10.3%);
-  grid-template-rows: repeat(100, .15rem);
-  column-gap: 4%;
+  grid-template-rows: repeat(70, .15rem);
+  column-gap: 2%;
 }
 
 span {
-  text-align: center;
   grid-row: 100;  
 }
 
@@ -72,12 +71,36 @@ span {
   flex-direction: column-reverse;
 }
 
-#spending-graph li {
+.graph-container li{
   background-color: hsl(10, 79%, 65%);
-  color: rgba(0, 0, 0, 0%);
   border-radius: 4px;
+  cursor: pointer;
 }
 
+#spend-box {  
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: black;
+  width: 125%;
+  margin-left: -15%;
+  min-height: 2rem;
+  border: 1px solid black;
+  font-size: 0.7rem;
+  cursor:unset;
+}
+
+.spend-box-location {
+  grid-row: 50;
+} 
+
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: flex;
+}
 .monday {  
   grid-row: 80/ span 20;
 }
@@ -88,31 +111,15 @@ span {
 }
 .wednesday {
   background-color: aquamarine;
-  /* grid-row: 45 / span 55; */
   grid-column: 3;
 }
 
-#mon {
-  grid-column: 1;
+.days-of-week {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 2%;
 }
-#tue {
-  grid-column: 2;
-}
-#wed {
-  grid-column: 3;
-}
-#thu {
-  grid-column: 4;
-}
-#fri {
-  grid-column: 5;
-}
-#sat {
-  grid-column: 6
-}
-#sun {
-  grid-column: 7;
-}
+
 
 legend {
   padding: 0;
@@ -135,8 +142,10 @@ ul li {
 .main-card .days-of-week {
   font-size: 0.7rem;
   color: hsl(28, 10%, 53%);
-  margin-bottom: 1.7rem;
+  margin-bottom: rem;
   display: flex;
+  justify-content: space-between;
+  margin: 0 2%;
 }
 
 .main-card .bottom-analysis {
@@ -190,7 +199,7 @@ ul li {
   }
   .main-card,
   .top-card {
-    width: 450px;
+    width: 400px;
   }
   h1 {
     font-size: 1.9rem;
